@@ -1,0 +1,67 @@
+.signup-component{
+    position: relative;
+}
+.content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 15vh 85vh;
+}
+.body{
+    gap: 1rem;
+}
+.signup{
+    gap: 1rem;
+        text-align: center;
+        font-size: 2rem;
+}
+
+.form {
+
+    grid-template-columns: 2fr 1fr; /* Default value */
+    width: 30%;
+  }
+  
+  .form input {
+    color: black;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid black;
+    outline: none; /* Remove the focus outline */
+  }
+  
+  .form button {
+    padding: 0.5rem 2rem;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.05rem;
+    margin-top: 5px;
+    margin-left: 70px;
+    /* text-align: center; */
+    
+  }
+  
+  
+  .form.showPassword {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .signup-btn{
+    padding: 0.5rem 1rem;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-right: 70px;
+  }

@@ -1,0 +1,12 @@
+.user-liked .liked{
+    margin: 2.3rem;
+    margin-top: 8rem;
+    gap: 3rem;
+}
+.liked h1 {
+    margin-left: 3rem;
+}
+.grid{
+    flex-wrap: wrap;
+      gap: 1rem;
+}

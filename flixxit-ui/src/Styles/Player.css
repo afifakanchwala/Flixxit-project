@@ -1,0 +1,18 @@
+.player{
+    height: 100vh;
+    width: 100vw;
+}
+.back{
+    position: absolute;
+    padding: 2rem;
+    z-index: 1;
+}
+.back >svg{
+    font-size: 3rem;
+        cursor: pointer;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
