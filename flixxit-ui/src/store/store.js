@@ -4,7 +4,7 @@ import {
   createSlice,
 } from "@reduxjs/toolkit";
 import axios from "axios";
-import { API_KEY, TMDB_BASE_URL, BASE_MONGO_URL } from "../config.js";
+import { API_KEY, TMDB_BASE_URL, BASE_MONGO_URL } from "../config";
 
 const initialState = {
   movies: [],
@@ -83,18 +83,44 @@ export const getUsersLikedMovies = createAsyncThunk(
     return movies;
   }
 );
+// export const removeMovieFromLiked = createAsyncThunk(
+//   "flixxit/deleteLiked",
+//   async ({ movieId, email }) => {
+//     const {
+//       data: { movies },
+//     } = await axios.put(`${BASE_MONGO_URL}/api/user/remove`, {
+//       email,
+//       movieId,
+//     });
+//     return movies;
+//   }
+// );
 export const removeMovieFromLiked = createAsyncThunk(
   "flixxit/deleteLiked",
-  async ({ movieId, email }) => {
-    const {
-      data: { movies },
-    } = await axios.put(`${BASE_MONGO_URL}/api/user/remove`, {
-      email,
-      movieId,
-    });
-    return movies;
+  async ({ movieId, email }, thunkAPI) => {
+    try {
+      const response = await axios.put(`${BASE_MONGO_URL}/api/user/remove`, {
+        email,
+        movieId,
+      });
+      const { movies } = response.data; // Assuming that the response contains a 'movies' property
+
+      if (movies) {
+        return movies;
+      } else {
+        return thunkAPI.rejectWithValue({
+          message: "Invalid response format.",
+        });
+      }
+    } catch (error) {
+      // Handle the error and return a rejection with an error message
+      return thunkAPI.rejectWithValue({
+        message: "Failed to remove movie from liked list.",
+      });
+    }
   }
 );
+
 const FlixxitSlice = createSlice({
   name: "Flixxit",
   initialState,
