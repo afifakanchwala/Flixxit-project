@@ -13,7 +13,7 @@ const Header = (props) => {
         <span>FLIXXIT</span>
       </div>
       <button onClick={logoHandler}>
-        {props.login ? "Log In" : "Sign In"}
+        {props.login ? "Log In" : "Sign Up"}
       </button>
     </div>
   );

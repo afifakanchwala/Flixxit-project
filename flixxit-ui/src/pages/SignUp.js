@@ -56,41 +56,43 @@ const SignUp = () => {
   return (
     <div className="signup-component">
       <BackgroundImage />
-      <div className="content">
+      <div className="content ">
         <Header login />
-        <div className="body flex column a-center j-center">
-          <div className="form">
-            <input
-              type="text"
-              placeholder="User name"
-              name="username"
-              value={formValue.username}
-              onChange={nameHandler}
-            />
-            <input
-              type="email"
-              placeholder="Email Address"
-              name="email"
-              value={formValue.email}
-              onChange={emailHandler}
-            />
-            {showPassword && (
+        <div className="sign-form-container flex column a-center j-center">
+          <div className="sign-forms flex column a-center j-center">
+            <div className="form">
               <input
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={formValue.password}
-                onChange={passHandler}
+                type="text"
+                placeholder="User name"
+                name="username"
+                value={formValue.username}
+                onChange={nameHandler}
               />
-            )}
+              <input
+                type="email"
+                placeholder="Email Address"
+                name="email"
+                value={formValue.email}
+                onChange={emailHandler}
+              />
+              {showPassword && (
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={formValue.password}
+                  onChange={passHandler}
+                />
+              )}
 
-            {!showPassword && (
-              <button onClick={passwordbuttonHandler}>Get Started</button>
-            )}
+              {!showPassword && (
+                <button onClick={passwordbuttonHandler}>Get Started</button>
+              )}
+            </div>
+            <button className=" signup-btn" onClick={signUpHandler}>
+              Sign Up
+            </button>
           </div>
-          <button className=" signup-btn" onClick={signUpHandler}>
-            Sign Up
-          </button>
         </div>
       </div>
     </div>

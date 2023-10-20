@@ -11,6 +11,18 @@
     display: grid;
     grid-template-rows: 15vh 85vh;
 }
+.sign-form-container {
+  gap: 2rem;
+  height: 85vh;
+  
+}
+.sign-forms{
+  padding: 2rem;
+      background-color: #000000b0;
+      width: 40vw;
+      gap: 2rem;
+      color: white;
+}
 .body{
     gap: 1rem;
 }
@@ -22,8 +34,9 @@
 
 .form {
 
-    grid-template-columns: 2fr 1fr; /* Default value */
-    width: 30%;
+    grid-template-columns: 2fr 2fr; /* Default value */
+    width: 50%
+    
   }
   
   .form input {
@@ -33,6 +46,10 @@
     font-size: 20px;
     border: 1px solid black;
     outline: none; /* Remove the focus outline */
+    margin-top: 20px;
+    /* margin-right: 40px; */
+    
+    
   }
   
   .form button {
@@ -44,8 +61,8 @@
     font-weight: bolder;
     font-size: 1.05rem;
     margin-top: 5px;
-    margin-left: 70px;
-    /* text-align: center; */
+    margin-left: 50px; 
+     text-align: center;
     
   }
   
@@ -63,5 +80,5 @@
     font-weight: bolder;
     font-size: 1.05rem;
     text-align: center;
-    margin-right: 70px;
+     margin-left: 20px; 
   }

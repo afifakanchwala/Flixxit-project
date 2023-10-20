@@ -11,6 +11,7 @@ import { firebaseAuth } from "../utils/firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 import axios from "axios";
 import { removeMovieFromLiked } from "../store/store";
+import { BASE_MONGO_URL } from "../config";
 
 const Card = ({ movieData, isLiked = false }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -25,7 +26,7 @@ const Card = ({ movieData, isLiked = false }) => {
   });
   const addToList = async () => {
     try {
-      await axios.post("http://localhost:5000/api/user/add", {
+      await axios.post(`${BASE_MONGO_URL}/api/user/add`, {
         email,
         data: movieData,
       });
